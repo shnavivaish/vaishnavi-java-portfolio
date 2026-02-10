@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaishnavi Mashakhetri | Full Stack Java Developer</title>
+
+<style>
+:root{
+  --primary:#f6c87a;
+  --accent:#ff9f1c;
+  --dark:#1e1e1e;
+  --light:#ffffff;
+  --bg:#f4f4f4;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.6;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:var(--primary);
+  padding:40px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:2.5rem;
+}
+
+header p{
+  margin-top:8px;
+  font-size:1.1rem;
+}
+
+/* ===== NAV ===== */
+nav{
+  background:#222;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:12px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+/* ===== SECTION ===== */
+section{
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.section-title{
+  font-size:1.8rem;
+  margin-bottom:20px;
+  border-left:5px solid var(--accent);
+  padding-left:10px;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+/* ===== SKILLS & PROJECTS ===== */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.skill-box{
+  background:white;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.skill-box:hover{
+  transform:translateY(-5px);
+}
+
+.skill-box h4{
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+/* ===== TIMELINE ===== */
+.timeline{
+  background:white;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-item{
+  margin-bottom:15px;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  background:var(--dark);
+  color:white;
+  padding:40px 20px;
+  text-align:center;
+}
+
+.contact a{
+  color:var(--primary);
+  text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .about{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Vaishnavi Mashakhetri</h1>
+  <p>Full Stack Java Developer</p>
+  <p>Nagpur, India | vaishnavimashakhetri1@gmail.com | 8010256375</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    <p>
+      I am a passionate Full Stack Java Developer with strong knowledge
+      of Java backend development. I enjoy building secure, scalable,
+      and efficient applications using Java and database connectivity.
+    </p>
+    <p>
+      I focus on writing clean backend logic, understanding JDBC,
+      SQL operations, and integrating Java applications with
+      user-friendly front-end interfaces.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills">
+    <div class="skill-box">
+      <h4>Backend</h4>
+      <p>Java, JDBC,Python, SQL, MySQL</p>
+    </div>
+    <div class="skill-box">
+      <h4>Frontend</h4>
+      <p>HTML, CSS, JavaScript</p>
+    </div>
+    <div class="skill-box">
+      <h4>Tools</h4>
+      <p>Git, GitHub, Eclipse, VS Code</p>
+    </div>
+    <div class="skill-box">
+      <h4>Soft Skills</h4>
+      <p>Communication, Teamwork, Problem Solving</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Java Project Showcase</h2>
+  <div class="skills">
+
+    <div class="skill-box">
+      <h4>Bank Management Application</h4>
+      <p>
+        Console-based Java application that allows users to
+        create accounts, deposit money, withdraw funds,
+        and check balances.
+      </p>
+      <p>
+        JDBC is used for database connectivity to store
+        and retrieve account information securely.
+      </p>
+      <p><b>Technology:</b> Java, JDBC, MySQL</p>
+      <p><b>Type:</b> Academic / Local Project</p>
+    </div>
+
+    <div class="skill-box">
+      <h4>Calculator Application</h4>
+      <p>
+        A simple calculator built using Core Java that
+        performs addition, subtraction, multiplication,
+        and division.
+      </p>
+      <p>
+        Focuses on Object-Oriented Programming concepts
+        such as classes, methods, and encapsulation.
+      </p>
+      <p><b>Technology:</b> Core Java</p>
+      <p><b>Type:</b> Practice Project</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <b>B.Tech – Priyadarshini College of Engineering, Nagpur</b><br>
+      RTMNU | 2022 – 2026 | CGPA: 8.39
+    </div>
+    <div class="timeline-item">
+      <b>HSC (Science)</b> – Mahatma Gandhi Junior College | 70%
+    </div>
+    <div class="timeline-item">
+      <b>SSC</b> – Sarvodaya Vidyalaya, Hingna | 92%
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p><a href="https://github.com/shnavivaish "> GitHub</a> | <a href="https://www.linkedin.com/in/vaishnavi-mashakhetri-022660354 "> linkedin</a>
+
+  </p>
+</section>
+
+<footer>
+  © 2026 Vaishnavi Mashakhetri | Full Stack Java Developer
+</footer>
+
+<script>
+document.querySelectorAll("nav a").forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute("href"))
+      .scrollIntoView({behavior:"smooth"});
+  });
+});
+</script>
+
+</body>
+</html>
