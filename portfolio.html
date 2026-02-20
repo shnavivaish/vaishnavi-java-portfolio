@@ -3,150 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaishnavi Mashakhetri | Full Stack Java Developer</title>
+<title>Vaishnavi Mashakhetri | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
-  --primary:#ff9f1c;
-  --dark:#111;
-  --light:#ffffff;
-  --bg:#f8f9fa;
-  --gradient:linear-gradient(135deg,#ff9f1c,#ffbf69);
+  --bg:#0d0d0d;
+  --primary:#a855f7;
+  --secondary:#9333ea;
+  --text:#ffffff;
 }
 
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
+  font-family:'Poppins',sans-serif;
 }
 
 body{
-  background:linear-gradient(-45deg,#f8f9fa,#fdf3e7,#fff,#f8f9fa);
-  background-size:400% 400%;
-  animation:bgMove 15s ease infinite;
-  color:var(--dark);
-  scroll-behavior:smooth;
-  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
 }
 
-@keyframes bgMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-/* Floating background circles */
-body::before,
-body::after{
-  content:"";
-  position:fixed;
-  width:300px;
-  height:300px;
-  background:var(--primary);
-  opacity:0.08;
-  border-radius:50%;
-  filter:blur(80px);
-  z-index:-1;
-  animation:float 12s infinite alternate ease-in-out;
-}
-
-body::after{
-  right:-100px;
-  bottom:-100px;
-  animation-duration:15s;
-}
-
-@keyframes float{
-  from{transform:translate(0,0);}
-  to{transform:translate(50px,50px);}
-}
-
-/* ===== HERO ===== */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:80px 10%;
-  background:linear-gradient(135deg,#ff9f1c,#ffbf69);
-  color:white;
-  position:relative;
-}
-
-.hero-content{
-  max-width:800px;
-}
-
-.hero h1{
-  font-size:3.2rem;
-  margin-bottom:20px;
-}
-
-.hero p{
-  font-size:1.2rem;
-  margin-bottom:10px;
-}
-
-
-@keyframes floatVisual{
-  from{transform:translateY(0);}
-  to{transform:translateY(-20px);}
-}
-
-/* ===== TEXT ANIMATION ===== */
-.animate-text{
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 1s forwards;
-}
-
-.delay1{
-  animation-delay:0.5s;
-}
-
-.delay2{
-  animation-delay:1s;
-}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-
-/* ===== NAV ===== */
+/* NAV */
 nav{
-  background:rgba(17,17,17,0.85);
-  backdrop-filter:blur(10px);
   display:flex;
   justify-content:center;
   gap:30px;
-  padding:15px;
-  position:sticky;
-  top:0;
+  padding:20px;
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
   z-index:100;
-  transition:0.4s;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  font-weight:500;
-  transition:0.3s;
   position:relative;
 }
 
 nav a::after{
-  content:"";
-  position:absolute;
-  width:0%;
+  content:'';
+  width:0;
   height:2px;
-  left:0;
-  bottom:-5px;
   background:var(--primary);
+  position:absolute;
+  bottom:-5px;
+  left:0;
   transition:0.3s;
 }
 
@@ -154,211 +61,203 @@ nav a:hover::after{
   width:100%;
 }
 
-/* ===== SECTIONS ===== */
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:url("https://media.tenor.com/4RYbGa1GttQAAAAd/lofi-browsing.gif") center/cover;
+}
+
+.hero h1{
+  font-size:3rem;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+/* SECTION */
 section{
-  max-width:1100px;
-  margin:100px auto;
-  padding:0 20px;
-  opacity:0;
-  transform:translateY(60px);
-  transition:all 1s ease;
+  padding:100px 10%;
 }
 
-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.section-title{
+.title{
+  text-align:center;
   font-size:2rem;
   margin-bottom:40px;
-  text-align:center;
-  position:relative;
 }
 
-.section-title::after{
-  content:'';
-  width:80px;
-  height:4px;
-  background:var(--primary);
-  display:block;
-  margin:10px auto 0;
-  border-radius:2px;
-}
-
-/* ===== ABOUT ===== */
+/* ABOUT */
 .about{
   text-align:center;
-  max-width:800px;
+  max-width:700px;
   margin:auto;
-  font-size:1.1rem;
   line-height:1.6;
 }
 
-/* ===== GRID ===== */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
 }
 
-/* ===== CARD PREMIUM ===== */
+.skills img{
+  width:50px;
+  transition:0.3s;
+}
+
+.skills img:hover{
+  transform:scale(1.2);
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
 .card{
-  background:rgba(255,255,255,0.7);
-  backdrop-filter:blur(20px);
-  padding:25px;
-  border-radius:18px;
-  transition:all 0.5s ease;
-  box-shadow:0 15px 30px rgba(0,0,0,0.08);
-  border:1px solid rgba(255,255,255,0.3);
+  background:#1a1a1a;
+  padding:20px;
+  border-radius:15px;
+  transition:0.4s;
 }
 
 .card:hover{
-  transform:translateY(-15px) scale(1.03);
-  box-shadow:0 25px 50px rgba(0,0,0,0.15);
+  transform:translateY(-10px);
+  box-shadow:0 0 20px var(--primary);
 }
 
-.card h3{
-  color:var(--primary);
-  margin-bottom:15px;
-}
-
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact{
-  background:#111;
-  color:white;
-  padding:60px 20px;
   text-align:center;
 }
 
 .contact a{
-  color:white;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.contact a:hover{
   color:var(--primary);
+  margin:10px;
+  display:inline-block;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   text-align:center;
-  padding:15px;
-  background:#000;
-  color:#aaa;
+  padding:20px;
+  opacity:0.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <h1 class="animate-text">Vaishnavi Mashakhetri</h1>
-    <p class="animate-text delay1">Full Stack Java Developer</p>
-    <p class="animate-text delay2">Nagpur, India | vaishnavimashakhetri1@gmail.com</p>
-  </div>
-  <div class="hero-visual"></div>
-</div>
-
-
-<!-- NAV -->
 <nav>
   <a href="#about">About</a>
+  <a href="#education">Education</a>
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Hi, I'm <span>Vaishnavi</span> 👋</h1>
+    <p>Full Stack Developer | AI & Data Science</p>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <section id="about">
-  <h2 class="section-title">About Me</h2>
-  <div class="about">
-    I am a passionate Full Stack Java Developer focused on backend
-    development using Java and JDBC. I enjoy building secure,
-    scalable applications and continuously improving my technical skills.
+  <h2 class="title">About Me</h2>
+  <p class="about">
+    I'm Vaishnavi Mashakhetri, a final year engineering student specializing in Artificial Intelligence & Data Science.
+    I build modern web applications and love combining creativity with logic to create impactful solutions.
+  </p>
+</section>
+<section id="education">
+  <h2 class="title">Education</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>SSC (10th)</h3>
+      <p>Achieved 92% in SSC</p>
+      <p>From Sarvodaya Vidyalaya Hingna</p>
+    </div>
+
+    <div class="card">
+      <h3>HSC (12th)</h3>
+      <p>Achieved 70% in HSC</p>
+      <p>From Mahatma Gandhi Junior College</p>
+    </div>
+
+    <div class="card">
+      <h3>Engineering (AIDS)</h3>
+      <p>CGPA: <b>8.39</b></p>
+    </div>
+
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h2 class="section-title">Technical Skills</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Backend</h3>
-      Java, JDBC, MySQL
-    </div>
-    <div class="card">
-      <h3>Frontend</h3>
-      HTML, CSS, JavaScript
-    </div>
-    <div class="card">
-      <h3>Tools</h3>
-      Git, GitHub, VS Code, Eclipse
-    </div>
+  <h2 class="title">Tech Stack</h2>
+  <div class="skills">
+    <img src="https://skillicons.dev/icons?i=java">
+    <img src="https://skillicons.dev/icons?i=python">
+    <img src="https://skillicons.dev/icons?i=c">
+    <img src="https://skillicons.dev/icons?i=cpp">
+    <img src="https://skillicons.dev/icons?i=html">
+    <img src="https://skillicons.dev/icons?i=css">
+    <img src="https://skillicons.dev/icons?i=js">
+    <img src="https://skillicons.dev/icons?i=nodejs">
+    <img src="https://skillicons.dev/icons?i=react">
+    <img src="https://skillicons.dev/icons?i=ts">
+    <img src="https://skillicons.dev/icons?i=mysql">
+    <img src="https://skillicons.dev/icons?i=postgres">
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2 class="section-title">Java Projects</h2>
-  <div class="grid">
+  <h2 class="title">Projects</h2>
 
+  <div class="projects">
     <div class="card">
-      <h3>Bank Management Application</h3>
-      Console-based Java application allowing account creation,
-      deposits, withdrawals and balance checking.
-      <br><br>
-      <b>Tech:</b> Java, JDBC, MySQL
+      <h3>Budget Tracker</h3>
+      <p>AI-powered budgeting web app with smart insights.</p>
     </div>
 
     <div class="card">
-      <h3>Calculator Application</h3>
-      Core Java calculator performing arithmetic operations.
-      Demonstrates OOP concepts like classes and methods.
-      <br><br>
-      <b>Tech:</b> Core Java
+      <h3>To-Do App</h3>
+      <p>Interactive productivity app with animations.</p>
     </div>
 
+    <div class="card">
+      <h3>Bank System</h3>
+      <p>Java + JDBC banking system with authentication.</p>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2>Contact</h2>
-  <p><a href="https://github.com/shnavivaish">GitHub</a>  |  <a href="https://leetcode.com/u/shnvivaish/" >leetCode</a></p>
+<section id="contact" class="contact">
+  <h2 class="title">Connect</h2>
+
+  <a href="https://www.linkedin.com/in/vaishnavi-mashakhetri-022660354">LinkedIn</a>
+  <a href="https://leetcode.com/u/shnvivaish/">LeetCode</a>
+  <a href="https://github.com/">GitHub</a>
 </section>
 
 <footer>
-  © 2026 Vaishnavi Mashakhetri | Full Stack Java Developer
+  © 2026 Vaishnavi Mashakhetri
 </footer>
 
-<script>
-  const sections = document.querySelectorAll("section");
-  const titles = document.querySelectorAll(".section-title");
-  
-  window.addEventListener("scroll", () => {
-  
-    sections.forEach(section => {
-      const top = section.getBoundingClientRect().top;
-      if(top < window.innerHeight - 100){
-        section.classList.add("show");
-      }
-    });
-  
-    titles.forEach(title=>{
-      const top = title.getBoundingClientRect().top;
-      if(top < window.innerHeight - 100){
-        title.classList.add("show-title");
-      }
-    });
-  
-  });
-  </script>
-  
-  
 </body>
 </html>
